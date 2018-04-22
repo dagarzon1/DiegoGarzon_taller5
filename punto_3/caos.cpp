@@ -30,13 +30,13 @@ double dq2(double p2)
 double dp1(double q1)
 {
 	double eps=0.001;
-	double res= - ( 2.0*q1 ) / ( pow( ( ( 4.0*q1*q1 ) + ( eps*eps ) ) , 3.0/2.0 ) ) ;
+	double res= ( 2.0*q1 ) / ( pow( ( ( 4.0*q1*q1 ) + ( eps*eps ) ) , 3.0/2.0 ) ) ;
 	return res;
 }
 double dp2(double q1, double q2)
 {
 	double eps=0.001;
-	double res= ( q1-q2 ) / ( pow( ( ( ( q1-q2 ) * ( q1-q2 ) ) + ( eps*eps/4.0 ) ) , 3.0/2.0 ) ) - ( ( q1+q2 ) / ( pow( ( ( ( q1+q2 ) * ( q1+q2 ) ) + ( eps*eps/4.0 ) ) , 3.0/2.0 ) ) );
+	double res=( ( q1-q2 ) / ( pow( ( ( ( q1-q2 ) * ( q1-q2 ) ) + ( eps*eps/4.0 ) ) , 3.0/2.0 ) ) )- ( ( q1+q2 ) / ( pow( ( ( ( q1+q2 ) * ( q1+q2 ) ) + ( eps*eps/4.0 ) ) , 3.0/2.0 ) ) );
 	return res;
 }
 double runge_kutta(double h, int N, double p1_in, double p2_in, double q1_in, double q2_in)
@@ -87,9 +87,9 @@ double runge_kutta(double h, int N, double p1_in, double p2_in, double q1_in, do
 }
 void imprimir(double * q1, double * q2, double * p1, double *p2, int N)
 {
-	for(int i=1;i<N;i++)
+	for(int i=1;i<N;i=i+5000)
 	{	
-		cout<<q1[i]<<" "<<i*0.006<<endl;/*
+		cout<<q2[i]<<" "<<i*0.006<<endl;/*
 		if( ( q1[i-1]>0.0 ) && ( q1[i]<0.0 ) )
 		{
 			cout<<q2[i]<<" "<<p2[i]<<endl;

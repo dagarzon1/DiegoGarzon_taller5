@@ -7,4 +7,4 @@ caos.txt:caos.x
 caos.x:
 	c++ caos.cpp -o caos.x
 clean:
-	caos.pdf
+	rm caos.pdf
