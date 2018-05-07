@@ -30,7 +30,11 @@ double dq2(double p2)
 double dp1(double q1)
 {
 	double eps=0.001;
+<<<<<<< HEAD
 	double res= (-2.0*q1 ) / ( pow( ( ( 4.0*q1*q1 ) + ( eps*eps ) ) , 3.0/2.0 ) ) ;
+=======
+	double res=- ( 2.0*q1 ) / ( pow( ( ( 4.0*q1*q1 ) + ( eps*eps ) ) , 3.0/2.0 ) ) ;
+>>>>>>> 0a05c40c9ca918dc110c88a0bb19b2c8b98508a3
 	return res;
 }
 double dp2(double q1, double q2)
