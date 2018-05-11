@@ -6,25 +6,25 @@ using namespace std;
 int main()
 {
   double c=pow( 1.0/4.0 , 0.5 );
-  int Nx=100;
-  double T=200;
-  int Nt=1000;
-  double dt=T/10000;
-  double dx=;
+  int Nx=500;
+  double dx=0.2;
+  double dt=dx/c;
   double L=100;
+  int Nt=200/dt;
   double * u_initial = new double[Nx];
   double * u= new double[Nx];
   double x=0.0;
   for(int i=0;i<Nx;i++)
   {
-    x+=dx;
-    if(x<=0.8*L)
+    x=i*dx;
+    if(x<=(0.8*L))
 	{
 		u_initial[i]=1.25*x/L;
 	}
     else
 	{
 		u_initial[i]=5.0-( 5.0 * x )/L;
+		//cout<<x<<endl;
 	}
   }
   double ** u_save = new double*[Nt];
@@ -55,14 +55,14 @@ int main()
       u_save[j][i]=u[i];
     }
   }
-  x=0.0;
+  //x=0.0;
   for(int i=0;i<Nx;i++)
   {
-    x+=dx;
-    cout<<x<<" ";
+    //x+=dx;
+    //cout<<x<<" ";
     for(int j=0;j<Nt;j++)
     {
-      x+=dx;
+      //x+=dx;
       cout<<u_save[j][i]<<" ";
     }
     cout<<endl;
