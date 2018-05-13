@@ -18,9 +18,4 @@ anim = FuncAnimation(fig,update,frames=np.arange(1,len(data[1])),interval=5)
 anim.save('cuerda.gif', dpi=80, writer='imagemagick')
 
 
-#for i in range(len(data[1])):
-#	plt.scatter(x,data[:,i])
-#	plt.savefig("cuerda%i.png"%i)
-#	filen.append("cuerda%i.png"%i)
-
 
