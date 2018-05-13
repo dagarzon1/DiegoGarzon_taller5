@@ -14,7 +14,7 @@ def update(i):
 	cuerda.set_ydata(data[:,i])
 	return cuerda
 
-anim = FuncAnimation(fig,update,frames=np.arange(1,len(data[1])),interval=10)
+anim = FuncAnimation(fig,update,frames=np.arange(1,len(data[1])),interval=5)
 anim.save('cuerda.gif', dpi=80, writer='imagemagick')
 
 
