@@ -85,20 +85,17 @@ double runge_kutta(double h, int N, double p1_in, double p2_in, double q1_in, do
 		q2[i]=q2[i-1] + h * (q2k1 + 2*q2k2 + 2*q2k3 + q2k4)/6.0;
 		p1[i]=p1[i-1] + h * (p1k1 + 2*p1k2 + 2*p1k3 + p1k4)/6.0;
 		p2[i]=p2[i-1] + h * (p2k1 + 2*p2k2 + 2*p2k3 + p2k4)/6.0;
-		cout<<q1[i]<<endl;
 	}
-	//imprimir(q1,q2,p1,p2,N);
+	imprimir(q1,q2,p1,p2,N);
 }
 void imprimir(double * q1, double * q2, double * p1, double *p2, int N)
 {
 	double t;
-	for(int i=1;i<N;i=i+3000)
+	for(int i=1;i<N;i++)
 	{	
-		t=i*0.006;
-		cout<<q1[i]<<" "<<t<<endl;
-		if( ( q1[i-1]>0.0 ) && ( q1[i]<0.0 ) )
+		if( ( q1[i-1]<0.1 ) && ( q1[i]>0.0 ) )
 		{
-			//cout<<q2[i]<<" "<<p2[i]<<endl;
+			cout<<q2[i]<<" "<<p2[i]<<endl;
 		}
 	}
 }
